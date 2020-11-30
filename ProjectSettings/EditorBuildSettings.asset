@@ -11,4 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectionGame.unity
     guid: 5df31563816f94fd99f771f31b911b00
+  - enabled: 1
+    path: Assets/Scenes/GeneralSettings.unity
+    guid: fac34dbfc029d436197dde104c9c13ec
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelect.unity
+    guid: cc0ae36c621f8476196713c62fec6425
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 8467a660cad0548768dca3d29fe09346
+  - enabled: 1
+    path: Assets/Scenes/SettingsScene.unity
+    guid: 3a11f01de39724d8aa95d478a66c8c24
+  - enabled: 1
+    path: Assets/Scenes/SelectionScenes.unity
+    guid: 4459a8efb24cc4d7a8eb92aa76008ec4
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
