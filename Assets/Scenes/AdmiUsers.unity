@@ -766,7 +766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 224, y: -161}
+  m_AnchoredPosition: {x: 229, y: -216}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &173666803
@@ -811,7 +811,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 173666804}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1348529881}
+        m_MethodName: deleteUser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &173666804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,7 +1221,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Guardar
+  m_Text: Buscar
 --- !u!222 &345974225
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2521,7 +2532,7 @@ GameObject:
   - component: {fileID: 949914642}
   - component: {fileID: 949914641}
   m_Layer: 5
-  m_Name: GuardarButton (3)
+  m_Name: ActualizarButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2544,7 +2555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 263, y: -82.45}
+  m_AnchoredPosition: {x: 184, y: -168}
   m_SizeDelta: {x: 70.105286, y: 29.99976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &949914641
@@ -2589,7 +2600,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 949914642}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1348529881}
+        m_MethodName: updateUser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &949914642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2773,7 +2795,7 @@ GameObject:
   - component: {fileID: 975375251}
   - component: {fileID: 975375250}
   m_Layer: 5
-  m_Name: GuardarButton (1)
+  m_Name: BuscarButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2796,7 +2818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 263, y: 19}
+  m_AnchoredPosition: {x: 138, y: 130}
   m_SizeDelta: {x: 70.105286, y: 29.99976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975375250
@@ -2841,7 +2863,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 975375251}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1348529881}
+        m_MethodName: searchForUser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &975375251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3806,6 +3839,7 @@ GameObject:
   - component: {fileID: 1348529879}
   - component: {fileID: 1348529878}
   - component: {fileID: 1348529877}
+  - component: {fileID: 1348529881}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3897,6 +3931,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1348529881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348529876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aff4e53a2698da4c8c0eb2169347c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchUser: {fileID: 418477375}
+  username: {fileID: 1336174890}
+  email: {fileID: 219847536}
+  password: {fileID: 156336917}
 --- !u!1 &1350721849
 GameObject:
   m_ObjectHideFlags: 0
@@ -4229,7 +4279,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Guardar
+  m_Text: Actualizar
 --- !u!222 &1501592252
 CanvasRenderer:
   m_ObjectHideFlags: 0
