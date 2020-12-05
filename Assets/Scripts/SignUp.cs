@@ -27,12 +27,14 @@ public class SignUp : MonoBehaviour
             return;
         }
         //TODO Verificar que no existan id doble por favor
-        var json = "{\"user_ID\": " + username.text + ", \"email\": " + email.text + ", \"password\": " + password.text + "}";
+        var json = "{\"user_ID\": \"" + username.text + "\", \"email\": \"" + email.text + "\", \"password\": \"" + password.text + "\"}";
         var httpRequest = WebRequest.CreateHttp("https://localhost:44389/user");
         httpRequest.Method = "POST";
         httpRequest.ContentType = "application/json";
         var buffer = Encoding.UTF8.GetBytes(json);
         httpRequest.GetRequestStream().Write(buffer, 0, buffer.Length);
-        SceneManager.LoadScene("SelectionScenes");
+        Debug.Log(json);
+        Debug.Log(httpRequest.GetResponse());
+        //SceneManager.LoadScene("SelectionScenes");
     }
 }

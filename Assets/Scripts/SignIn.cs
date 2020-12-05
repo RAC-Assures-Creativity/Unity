@@ -20,12 +20,12 @@ public class SignIn : MonoBehaviour
         httpRequest.Method = "GET";
         var response = httpRequest.GetResponse();
         var json1 = JSON.Parse((new StreamReader(response.GetResponseStream())).ReadToEnd());
-        Debug.Log("User J:" + json["user_ID"]);
-        Debug.Log("Password J:" + json["password"]);
-        Debug.Log("User J1:" + json1["user_ID"]);
-        Debug.Log("Password J1:" + json1["password"]);
         if ((json["user_ID"] == json1["user_ID"]) && (json["password"] == json1["password"]))
         {
+            PlayerPrefs.SetString("user_ID", json1["user_ID"]);
+            PlayerPrefs.SetString("password", json1["password"]);
+            PlayerPrefs.SetString("email", json1["email"]);
+            PlayerPrefs.Save();
             SceneManager.LoadScene("SelectionScenes");
         } else
         {
