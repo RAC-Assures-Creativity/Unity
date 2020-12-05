@@ -14,7 +14,7 @@ public class AdminData : MonoBehaviour
 
     void Start()
     {
-            username.text = PlayerPrefs.GetString("user_id");
+            username.text = PlayerPrefs.GetString("user_ID");
             email.text = PlayerPrefs.GetString("email");
             password.text = PlayerPrefs.GetString("password");
     }

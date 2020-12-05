@@ -20,9 +20,10 @@ public class AdminUsers : MonoBehaviour
         httpRequest.Method = "GET";
         var response = httpRequest.GetResponse();
         var json = JSON.Parse((new StreamReader(response.GetResponseStream())).ReadToEnd());
-        username.text = json["username"];
+        username.text = json["user_ID"];
         email.text = json["email"];
         password.text = json["password"];
+
     }
     public void updateUser()
     {
@@ -32,6 +33,7 @@ public class AdminUsers : MonoBehaviour
         httpRequest.ContentType = "application/json";
         var buffer = Encoding.UTF8.GetBytes(json);
         httpRequest.GetRequestStream().Write(buffer, 0, buffer.Length);
+        var response = httpRequest.GetResponse();
         username.text = "";
         email.text = "";
         password.text = "";
@@ -45,5 +47,9 @@ public class AdminUsers : MonoBehaviour
         }
         var httpRequest = WebRequest.CreateHttp("https://localhost:44389/user/" + searchUser.text);
         httpRequest.Method = "DELETE";
+        var response = httpRequest.GetResponse();
+        username.text = "";
+        email.text = "";
+        password.text = "";
     }
 }
