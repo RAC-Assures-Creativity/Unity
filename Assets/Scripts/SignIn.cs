@@ -16,11 +16,18 @@ public class SignIn : MonoBehaviour
     public void Login()
     {
         var json = JSON.Parse("{\"user_ID\": " + username.text + ", \"password\": "+ password.text + "}");
-        var httpRequest = WebRequest.CreateHttp("https://localhost:44389/user/" + username.text);
+        var httpRequest = WebRequest.CreateHttp("https://localhost:5001/user/" + username.text);
         httpRequest.Method = "GET";
         var response = httpRequest.GetResponse();
         var json1 = JSON.Parse((new StreamReader(response.GetResponseStream())).ReadToEnd());
         response.Close();
+        Debug.Log(json1["user_ID"]);
+        Debug.Log(json["user_ID"]);
+        if ((json["user_ID"] == null)){
+            return;
+        }
+
+        
         if ((json["user_ID"] == json1["user_ID"]) && (json["password"] == json1["password"]))
         {
             PlayerPrefs.SetString("user_ID", json1["user_ID"]);
@@ -28,7 +35,7 @@ public class SignIn : MonoBehaviour
             PlayerPrefs.SetString("email", json1["email"]);
             PlayerPrefs.Save();
             SceneManager.LoadScene("SelectionScenes");
-        } else
+        } else 
         {
             Debug.Log("User not found");
         }
