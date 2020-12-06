@@ -24,33 +24,23 @@ public class MovimientoPersonaje : MonoBehaviour
 
     }
 
-
-    void Start()
-    {
-        
-    }
     
 
     void Update()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
-        //float attackInput = Input.GetAxisRaw("Jump");
-
+        
         if (horizontalInput != 0)
         {
             if (horizontalInput > 0)
             {
-                //animator.SetInteger("Movimiento", 4);
                 animator.SetTrigger("Derecha");
             }
             else
             {
-                //animator.SetInteger("Movimiento", 3);
                 animator.SetTrigger("Izquierda");
             }
-            //animator.SetInteger("Moverse", (int)horizontalInput * 2);
-            //animator.SetBool("Quieto", false);
             camino = true;
             direccionX = (int) horizontalInput;
             direccionY = 0;
@@ -59,19 +49,15 @@ public class MovimientoPersonaje : MonoBehaviour
         {
             if (verticalInput > 0)
             {
-                //animator.SetInteger("Movimiento", 1);
                 animator.SetTrigger("Arriba");
             }
             else
             {
-                //animator.SetInteger("Movimiento", 2);
                 animator.SetTrigger("Abajo");
             }
-            //animator.SetInteger("Moverse", (int)verticalInput);
-            //animator.SetBool("Quieto", false);
             camino = false;
             direccionX = 0;
-            direccionY = (int)verticalInput;
+            direccionY = (int) verticalInput;
         }
 
         movimiento = new Vector2(horizontalInput, verticalInput);
@@ -93,11 +79,4 @@ public class MovimientoPersonaje : MonoBehaviour
         }
 
     }
-
-
-    void LateUpdate()
-    {
-        //animator.SetBool("Quieto", movimiento == Vector2.zero);
-    }
-
 }
