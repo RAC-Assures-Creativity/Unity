@@ -26,15 +26,18 @@ public class SignUp : MonoBehaviour
             Debug.Log("El email no tiene @");
             return;
         }
-        //TODO Verificar que no existan id doble por favor
+        //TODO Verificar que no existan id doble por favor -> Tercer parcial nomás
         var json = "{\"user_ID\": \"" + username.text + "\", \"email\": \"" + email.text + "\", \"password\": \"" + password.text + "\"}";
         var httpRequest = WebRequest.CreateHttp("https://localhost:44389/user");
         httpRequest.Method = "POST";
         httpRequest.ContentType = "application/json";
         var buffer = Encoding.UTF8.GetBytes(json);
         httpRequest.GetRequestStream().Write(buffer, 0, buffer.Length);
-        Debug.Log(json);
-        Debug.Log(httpRequest.GetResponse());
-        //SceneManager.LoadScene("SelectionScenes");
+        httpRequest.GetResponse().Close();
+        PlayerPrefs.SetString("user_ID", username.text);
+        PlayerPrefs.SetString("password", password.text);
+        PlayerPrefs.SetString("email", email.text);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("SelectionScenes");
     }
 }

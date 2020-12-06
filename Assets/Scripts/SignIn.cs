@@ -20,6 +20,7 @@ public class SignIn : MonoBehaviour
         httpRequest.Method = "GET";
         var response = httpRequest.GetResponse();
         var json1 = JSON.Parse((new StreamReader(response.GetResponseStream())).ReadToEnd());
+        response.Close();
         if ((json["user_ID"] == json1["user_ID"]) && (json["password"] == json1["password"]))
         {
             PlayerPrefs.SetString("user_ID", json1["user_ID"]);
