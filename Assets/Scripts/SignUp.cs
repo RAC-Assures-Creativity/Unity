@@ -28,7 +28,7 @@ public class SignUp : MonoBehaviour
         }
         //TODO Verificar que no existan id doble por favor -> Tercer parcial nomás
         var json = "{\"user_ID\": \"" + username.text + "\", \"email\": \"" + email.text + "\", \"password\": \"" + password.text + "\"}";
-        var httpRequest = WebRequest.CreateHttp("https://localhost:44389/user");
+        var httpRequest = WebRequest.CreateHttp("https://localhost:5001/user");
         httpRequest.Method = "POST";
         httpRequest.ContentType = "application/json";
         var buffer = Encoding.UTF8.GetBytes(json);
