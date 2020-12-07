@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Mirror;
 
 
-public class MovimientoPersonaje : MonoBehaviour
+public class MovimientoPersonaje : NetworkBehaviour
 {
     public float speed = 0.00005f;
     public Vector2 direccion;
@@ -28,6 +29,7 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void Update()
     {
+        if (!hasAuthority) { return; }
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
         
@@ -67,6 +69,8 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!hasAuthority) { return; }
+
         float horizontalVelocity = movimiento.normalized.x * speed;
         float verticalVelocity = movimiento.normalized.y * speed;
         if (camino)
