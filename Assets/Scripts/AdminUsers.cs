@@ -16,7 +16,7 @@ public class AdminUsers : MonoBehaviour
 
     public void searchForUser()
     {
-        var httpRequest = WebRequest.CreateHttp("https://localhost:5001/user/" + searchUser.text);
+        var httpRequest = WebRequest.CreateHttp("https://localhost:44389/user/" + searchUser.text);
         httpRequest.Method = "GET";
         var response = httpRequest.GetResponse();
         var json = JSON.Parse((new StreamReader(response.GetResponseStream())).ReadToEnd());
@@ -29,13 +29,14 @@ public class AdminUsers : MonoBehaviour
     public void updateUser()
     {
         var json = "{\"user_ID\": \"" + username.text + "\", \"email\": \"" + email.text + "\", \"password\": \"" + password.text + "\"}";
-        var httpRequest = WebRequest.CreateHttp("https://localhost:5001/user/" + username.text);
+        var httpRequest = WebRequest.CreateHttp("https://localhost:44389/user/" + username.text);
         httpRequest.Method = "PUT";
         httpRequest.ContentType = "application/json";
         var buffer = Encoding.UTF8.GetBytes(json);
         httpRequest.GetRequestStream().Write(buffer, 0, buffer.Length);
         var response = httpRequest.GetResponse();
         response.Close();
+        searchUser.text = "";
         username.text = "";
         email.text = "";
         password.text = "";
@@ -47,10 +48,11 @@ public class AdminUsers : MonoBehaviour
         {
             return;
         }
-        var httpRequest = WebRequest.CreateHttp("https://localhost:5001/user/" + searchUser.text);
+        var httpRequest = WebRequest.CreateHttp("https://localhost:44389/user/" + searchUser.text);
         httpRequest.Method = "DELETE";
         var response = httpRequest.GetResponse();
         response.Close();
+        searchUser.text = "";
         username.text = "";
         email.text = "";
         password.text = "";

@@ -16,7 +16,7 @@ public class SignIn : MonoBehaviour
     public void Login()
     {
         var json = JSON.Parse("{\"user_ID\": " + username.text + ", \"password\": "+ password.text + "}");
-        var httpRequest = WebRequest.CreateHttp("https://localhost:5001/user/" + username.text);
+        var httpRequest = WebRequest.CreateHttp("https://localhost:44389/user/" + username.text);
         httpRequest.Method = "GET";
         var response = httpRequest.GetResponse();
         var json1 = JSON.Parse((new StreamReader(response.GetResponseStream())).ReadToEnd());
