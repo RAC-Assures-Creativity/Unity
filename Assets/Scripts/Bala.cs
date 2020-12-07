@@ -6,7 +6,6 @@ using UnityEngine;
 public class Bala : MonoBehaviour
 {
 
-    //public int damage = 10;
     public float speed = 2f;
     public Vector2 direccion;
     public float tiempoVida = 3f;
@@ -18,12 +17,6 @@ public class Bala : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
-
-    void Update()
-    {
-
-
-    }
 
     private void FixedUpdate()
     {
