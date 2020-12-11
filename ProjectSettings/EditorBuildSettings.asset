@@ -5,46 +5,49 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MenuPrincipal.unity
     guid: 782fbf35311e544a480091dcee0dec6e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SelectionGame.unity
     guid: 5df31563816f94fd99f771f31b911b00
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GeneralSettings.unity
     guid: fac34dbfc029d436197dde104c9c13ec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CharacterSelect.unity
     guid: cc0ae36c621f8476196713c62fec6425
   - enabled: 0
-    path: Assets/Scenes/MenusMultijugador/SceneLobby.unity
-    guid: 30f5bd0fc63500c4cb8306dfec1c72fa
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/GameScene.unity
     guid: 8467a660cad0548768dca3d29fe09346
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SettingsScene.unity
     guid: 3a11f01de39724d8aa95d478a66c8c24
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SelectionScenes.unity
     guid: 4459a8efb24cc4d7a8eb92aa76008ec4
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoginScene.unity
     guid: c98978433f1fbd54db7f638d2edae15a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Admin.unity
     guid: cddef3a6ba85e4a95bad69fb0ddb070a
   - enabled: 1
+    path: Assets/Scenes/MiltiplayerScene/Scene_Lobby.unity
+    guid: a62248000bd334d70892928408002b95
+  - enabled: 0
     path: Assets/Scenes/AdmiUsers.unity
     guid: 04fd87f87aa3b49b8a9b18ded50bbd8e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UserInfo.unity
     guid: dd779779b3f904a5d9fa72684497e2d7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoginAdmin.unity
     guid: 3d549b72a4e1b4e7588a4021897270c7
   m_configObjects: {}
