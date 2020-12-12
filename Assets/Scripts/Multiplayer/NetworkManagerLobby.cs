@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class NetworkManagerLobby : NetworkManager
     {
-       //[SerializeField] private int minPlayers = 2;
+        [SerializeField] private int minPlayers = 2;
         [Scene] [SerializeField] private string menuScene = string.Empty;
 
-        //[Header("Maps")]
+        [Header("Maps")]
         //[SerializeField] private int numberOfRounds = 1;
         //[SerializeField] private MapSet mapSet = null;
 
@@ -28,9 +28,9 @@ public class NetworkManagerLobby : NetworkManager
         public static event Action OnClientDisconnected;
         /*public static event Action<NetworkConnection> OnServerReadied;
         public static event Action OnServerStopped;
-
+        */
         public List<NetworkRoomPlayerLobby> RoomPlayers { get; } = new List<NetworkRoomPlayerLobby>();
-        public List<NetworkGamePlayerLobby> GamePlayers { get; } = new List<NetworkGamePlayerLobby>();*/
+        /*public List<NetworkGamePlayerLobby> GamePlayers { get; } = new List<NetworkGamePlayerLobby>();*/
 
         public override void OnStartServer() => spawnPrefabs = Resources.LoadAll<GameObject>("SpawnablePrefabs").ToList();
 
@@ -77,17 +77,17 @@ public class NetworkManagerLobby : NetworkManager
         {
             if (SceneManager.GetActiveScene().name == menuScene)
             {
-                //bool isLeader = RoomPlayers.Count == 0;
+                bool isLeader = RoomPlayers.Count == 0;
 
                 NetworkRoomPlayerLobby roomPlayerInstance = Instantiate(roomPlayerPrefab);
 
-                //roomPlayerInstance.IsLeader = isLeader;
+                roomPlayerInstance.IsLeader = isLeader;
 
                 NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
             }
         }
 
-        /*public override void OnServerDisconnect(NetworkConnection conn)
+        public override void OnServerDisconnect(NetworkConnection conn)
         {
             if (conn.identity != null)
             {
@@ -100,13 +100,13 @@ public class NetworkManagerLobby : NetworkManager
 
             base.OnServerDisconnect(conn);
         }
-
+    
         public override void OnStopServer()
         {
-            OnServerStopped?.Invoke();
+            //OnServerStopped?.Invoke();
 
             RoomPlayers.Clear();
-            GamePlayers.Clear();
+            //GamePlayers.Clear();
         }
 
         public void NotifyPlayersOfReadyState()
@@ -128,7 +128,7 @@ public class NetworkManagerLobby : NetworkManager
 
             return true;
         }
-
+    /*
         public void StartGame()
         {
             if (SceneManager.GetActiveScene().name == menuScene)
