@@ -10,7 +10,7 @@ public class NetworkManagerLobby : NetworkManager
         [SerializeField] private int minPlayers = 2;
         [Scene] [SerializeField] private string menuScene = string.Empty;
 
-        [Header("Maps")]
+        //[Header("Maps")]
         //[SerializeField] private int numberOfRounds = 1;
         //[SerializeField] private MapSet mapSet = null;
 
