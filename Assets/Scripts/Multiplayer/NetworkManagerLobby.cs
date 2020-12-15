@@ -65,12 +65,12 @@ public class NetworkManagerLobby : NetworkManager
                 conn.Disconnect();
                 return;
             }
-
+            /*
             if (SceneManager.GetActiveScene().name != menuScene)
             {
                 conn.Disconnect();
                 return;
-            }
+            }*/
         }
 
         public override void OnServerAddPlayer(NetworkConnection conn)
