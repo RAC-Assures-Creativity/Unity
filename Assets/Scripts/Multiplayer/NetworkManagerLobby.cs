@@ -17,10 +17,10 @@ public class NetworkManagerLobby : NetworkManager
         [Header("Room")]
         [SerializeField] private NetworkRoomPlayerLobby roomPlayerPrefab = null;
 
-        /*[Header("Game")]
+        [Header("Game")]
         [SerializeField] private NetworkGamePlayerLobby gamePlayerPrefab = null;
-        [SerializeField] private GameObject playerSpawnSystem = null;
-        [SerializeField] private GameObject roundSystem = null; */
+        //[SerializeField] private GameObject playerSpawnSystem = null;
+        //[SerializeField] private GameObject roundSystem = null; 
 
         //private MapHandler mapHandler;
 
@@ -30,7 +30,7 @@ public class NetworkManagerLobby : NetworkManager
         public static event Action OnServerStopped;
         */
         public List<NetworkRoomPlayerLobby> RoomPlayers { get; } = new List<NetworkRoomPlayerLobby>();
-        /*public List<NetworkGamePlayerLobby> GamePlayers { get; } = new List<NetworkGamePlayerLobby>();*/
+        public List<NetworkGamePlayerLobby> GamePlayers { get; } = new List<NetworkGamePlayerLobby>();
 
         public override void OnStartServer() => spawnPrefabs = Resources.LoadAll<GameObject>("SpawnablePrefabs").ToList();
 
@@ -128,23 +128,25 @@ public class NetworkManagerLobby : NetworkManager
 
             return true;
         }
-    /*
+    
         public void StartGame()
         {
-            if (SceneManager.GetActiveScene().name == menuScene)
-            {
+            //if (SceneManager.GetActiveScene().name == menuScene)
+            //{
                 if (!IsReadyToStart()) { return; }
 
-                mapHandler = new MapHandler(mapSet, numberOfRounds);
+                //mapHandler = new MapHandler(mapSet, numberOfRounds);
+            
+                //ServerChangeScene(mapHandler.NextMap);
 
-                ServerChangeScene(mapHandler.NextMap);
-            }
+                ServerChangeScene("GameSceneMultiplayer");
+            //}
         }
-
+    
         public override void ServerChangeScene(string newSceneName)
         {
             // From menu to game
-            if (SceneManager.GetActiveScene().name == menuScene && newSceneName.StartsWith("Scene_Map"))
+            if (/*SceneManager.GetActiveScene().name == menuScene &&*/ newSceneName.StartsWith("GameSceneMultiplayer"))
             {
                 for (int i = RoomPlayers.Count - 1; i >= 0; i--)
                 {
@@ -160,7 +162,7 @@ public class NetworkManagerLobby : NetworkManager
 
             base.ServerChangeScene(newSceneName);
         }
-
+    /*
         public override void OnServerSceneChanged(string sceneName)
         {
             if (sceneName.StartsWith("Scene_Map"))
