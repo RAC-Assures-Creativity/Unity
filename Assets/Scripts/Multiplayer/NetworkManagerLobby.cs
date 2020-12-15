@@ -75,8 +75,8 @@ public class NetworkManagerLobby : NetworkManager
 
         public override void OnServerAddPlayer(NetworkConnection conn)
         {
-            if (SceneManager.GetActiveScene().name == menuScene)
-            {
+            //if (SceneManager.GetActiveScene().name == menuScene)
+            //{
                 bool isLeader = RoomPlayers.Count == 0;
 
                 NetworkRoomPlayerLobby roomPlayerInstance = Instantiate(roomPlayerPrefab);
@@ -84,7 +84,7 @@ public class NetworkManagerLobby : NetworkManager
                 roomPlayerInstance.IsLeader = isLeader;
 
                 NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
-            }
+            //}
         }
 
         public override void OnServerDisconnect(NetworkConnection conn)
