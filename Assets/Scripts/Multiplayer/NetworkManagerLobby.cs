@@ -19,16 +19,16 @@ public class NetworkManagerLobby : NetworkManager
 
         [Header("Game")]
         [SerializeField] private NetworkGamePlayerLobby gamePlayerPrefab = null;
-        //[SerializeField] private GameObject playerSpawnSystem = null;
-        //[SerializeField] private GameObject roundSystem = null; 
+        [SerializeField] private GameObject playerSpawnSystem = null;
+        [SerializeField] private GameObject roundSystem = null; 
 
         //private MapHandler mapHandler;
 
         public static event Action OnClientConnected;
         public static event Action OnClientDisconnected;
-        /*public static event Action<NetworkConnection> OnServerReadied;
-        public static event Action OnServerStopped;
-        */
+        public static event Action<NetworkConnection> OnServerReadied;
+        ///  public static event Action OnServerStopped;
+        
         public List<NetworkRoomPlayerLobby> RoomPlayers { get; } = new List<NetworkRoomPlayerLobby>();
         public List<NetworkGamePlayerLobby> GamePlayers { get; } = new List<NetworkGamePlayerLobby>();
 
@@ -162,7 +162,7 @@ public class NetworkManagerLobby : NetworkManager
 
             base.ServerChangeScene(newSceneName);
         }
-    /*
+    
         public override void OnServerSceneChanged(string sceneName)
         {
             if (sceneName.StartsWith("Scene_Map"))
@@ -170,8 +170,8 @@ public class NetworkManagerLobby : NetworkManager
                 GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
                 NetworkServer.Spawn(playerSpawnSystemInstance);
 
-                GameObject roundSystemInstance = Instantiate(roundSystem);
-                NetworkServer.Spawn(roundSystemInstance);
+                ///GameObject roundSystemInstance = Instantiate(roundSystem);
+                ///NetworkServer.Spawn(roundSystemInstance);
             }
         }
 
@@ -180,5 +180,5 @@ public class NetworkManagerLobby : NetworkManager
             base.OnServerReady(conn);
 
             OnServerReadied?.Invoke(conn);
-        }*/
+        }
 }
