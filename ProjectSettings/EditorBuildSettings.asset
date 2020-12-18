@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Admin.unity
     guid: cddef3a6ba85e4a95bad69fb0ddb070a
   - enabled: 1
-    path: Assets/Scenes/MiltiplayerScene/Scene_Lobby.unity
+    path: Assets/Scenes/MultiplayerScene/Scene_Lobby.unity
     guid: a62248000bd334d70892928408002b95
   - enabled: 0
     path: Assets/Scenes/AdmiUsers.unity
@@ -50,4 +50,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LoginAdmin.unity
     guid: 3d549b72a4e1b4e7588a4021897270c7
+  - enabled: 1
+    path: Assets/Scenes/MultiplayerScene/SelectionCharacterMultiplayer.unity
+    guid: 4bdcb86aad6ea5a4fa3bc4e13eee3005
+  - enabled: 1
+    path: Assets/Scenes/MultiplayerScene/GameSceneMultiplayer.unity
+    guid: 39cd69ca1b4b13642bd68a4977b42826
   m_configObjects: {}
