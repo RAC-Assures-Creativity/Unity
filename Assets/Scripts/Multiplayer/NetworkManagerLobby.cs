@@ -139,14 +139,14 @@ public class NetworkManagerLobby : NetworkManager
             
                 //ServerChangeScene(mapHandler.NextMap);
 
-                ServerChangeScene("GameSceneMultiplayer");
+                ServerChangeScene("SelectionCharacterMultiplayer");
             //}
         }
     
         public override void ServerChangeScene(string newSceneName)
         {
             // From menu to game
-            if (/*SceneManager.GetActiveScene().name == menuScene &&*/ newSceneName.StartsWith("GameSceneMultiplayer"))
+            if (/*SceneManager.GetActiveScene().name == menuScene &&*/ newSceneName.StartsWith("SelectionCharacterMultiplayer"))
             {
                 for (int i = RoomPlayers.Count - 1; i >= 0; i--)
                 {
