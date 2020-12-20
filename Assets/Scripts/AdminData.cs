@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +16,7 @@ public class AdminData : MonoBehaviour
     public TMP_InputField nameAdmin;
     public TMP_InputField last_name;
     public TMP_InputField phone;
+    public GameObject confirm;
 
     void Start()
     {
@@ -29,9 +32,9 @@ public class AdminData : MonoBehaviour
             
     }
 
-    /*public void updateAdmin()
+    public void updateAdmin()
     {
-        var json = "{\"admin_ID\": \"" + admin_id.text + "\", \"email\": \"" + email.text + "\", \"password\": \"" + password.text + "\"}";
+        var json = "{\"admin_ID\": \"" + admin_id.text + "\", \"email\": \"" + email.text + "\", \"password\": \"" + password.text + "\", \"name\": \"" + nameAdmin.text + "\", \"last_Name\": \"" + last_name.text + "\", \"phone\": \"" + Int32.Parse(nameAdmin.text) + "\"}";
         var httpRequest = WebRequest.CreateHttp("https://localhost:44389/admin/" + admin_id.text);
         httpRequest.Method = "PUT";
         httpRequest.ContentType = "application/json";
@@ -39,9 +42,20 @@ public class AdminData : MonoBehaviour
         httpRequest.GetRequestStream().Write(buffer, 0, buffer.Length);
         var response = httpRequest.GetResponse();
         response.Close();
-        searchUser.text = "";
-        username.text = "";
-        email.text = "";
-        password.text = "";
-    }*/
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetString("admin_ID", admin_id.text);
+        PlayerPrefs.SetString("password", password.text);
+        PlayerPrefs.SetString("email", email.text);
+        PlayerPrefs.SetString("name", nameAdmin.text);
+        PlayerPrefs.SetString("last_name", last_name.text);
+        PlayerPrefs.SetInt("phone", Int32.Parse(nameAdmin.text));
+        PlayerPrefs.Save();
+        confirm.SetActive(true);
+        Invoke("RemoveConfirm", 2.0f);
+    }
+
+    public void RemoveConfirm()
+    {
+        confirm.SetActive(false);
+    }
 }
