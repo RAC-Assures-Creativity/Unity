@@ -2545,18 +2545,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5a89621dde359478fc796cc7d1b7a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   selectionBoxes:
   - {fileID: 1461630030}
   - {fileID: 916177829}
   - {fileID: 828532140}
   - {fileID: 803516599}
   prefabs:
-  - {fileID: 6247224463682640539, guid: 4b694c02a9451e94e9c411eee0a020c3, type: 3}
-  - {fileID: 5463244636899192322, guid: dc893324e96c0484c8af234833a3fac3, type: 3}
-  - {fileID: 1584757241147285127, guid: bc92392f3a831ad49a94ce4e25bba16f, type: 3}
-  - {fileID: 2144850581935212810, guid: eb7b9ae815fdb9b4fafd73e1a83ed440, type: 3}
+  - {fileID: 6203603453736328077, guid: fb1ce88f0a79ccb48bd79112c5151357, type: 3}
+  - {fileID: 5130821446386531921, guid: 9a3888014f66f67478784c5dad39ffa1, type: 3}
+  - {fileID: 3757491006104773048, guid: b5c263bcceedfa640b496a5aef961531, type: 3}
+  - {fileID: 1761967156963213425, guid: c33abf05b65eb0042ac49ddb99f82928, type: 3}
 --- !u!114 &2040953506
 MonoBehaviour:
   m_ObjectHideFlags: 0

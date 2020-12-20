@@ -5,7 +5,7 @@ using UnityEngine;
 
     public class PlayerSpawnSystem : NetworkBehaviour
     {
-        [SerializeField] private GameObject playerPrefab = null;
+        public GameObject playerPrefab = null;
 
         private static List<Transform> spawnPoints = new List<Transform>();
 

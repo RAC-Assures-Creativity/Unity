@@ -8,6 +8,18 @@ public class PlayerSelectorMultiplayer : NetworkBehaviour
 {
     public Image[] selectionBoxes;
     public GameObject[] prefabs;
+
+
+    private NetworkManagerLobby room;
+    private NetworkManagerLobby Room
+    {
+        get
+        {
+            if (room != null) { return room; }
+            return room = NetworkManager.singleton as NetworkManagerLobby;
+        }
+    }
+
     void Start()
     {
         foreach (var img in this.selectionBoxes)
@@ -26,6 +38,7 @@ public class PlayerSelectorMultiplayer : NetworkBehaviour
         }
 
         this.selectionBoxes[index].gameObject.SetActive(true);
-        PlayerStorageMultiplayer.playerPrefab = this.prefabs[index];
+        Room.playerSpawnSystem.GetComponent<PlayerSpawnSystem>().playerPrefab = this.prefabs[index];
+
     }
 }
