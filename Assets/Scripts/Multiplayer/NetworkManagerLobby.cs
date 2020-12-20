@@ -19,7 +19,7 @@ public class NetworkManagerLobby : NetworkManager
 
         [Header("Game")]
         [SerializeField] private NetworkGamePlayerLobby gamePlayerPrefab = null;
-        [SerializeField] private GameObject playerSpawnSystem = null;
+        [SerializeField] public GameObject playerSpawnSystem = null;
         [SerializeField] private GameObject roundSystem = null; 
 
         //private MapHandler mapHandler;
