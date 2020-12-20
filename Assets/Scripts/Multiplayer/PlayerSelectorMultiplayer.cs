@@ -32,13 +32,16 @@ public class PlayerSelectorMultiplayer : NetworkBehaviour
 
     public void Select(int index)
     {
+        //Debug.Log(index);
+
         foreach (var img in this.selectionBoxes)
         {
             img.gameObject.SetActive(false);
         }
 
         this.selectionBoxes[index].gameObject.SetActive(true);
-        Room.playerSpawnSystem.GetComponent<PlayerSpawnSystem>().playerPrefab = this.prefabs[index];
+        //Room.playerSpawnSystem.GetComponent<PlayerSpawnSystem>().playerPrefab = this.prefabs[index];
 
+        Room.playerSpawnSystem.GetComponent<PlayerSpawnSystem>().playerPrefab[index] = (this.prefabs[index]);
     }
 }
