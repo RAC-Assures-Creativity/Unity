@@ -1051,7 +1051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 332, y: -267}
+  m_AnchoredPosition: {x: 314, y: -213}
   m_SizeDelta: {x: 319.6994, y: 38.260345}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &369035411
@@ -1823,7 +1823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -392.6, y: -267}
+  m_AnchoredPosition: {x: -311, y: -213}
   m_SizeDelta: {x: 319.6994, y: 38.260345}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764133340
@@ -1973,7 +1973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2 Jugadore
+  m_text: 1 Jugador
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2656,7 +2656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 269}
+  m_AnchoredPosition: {x: 0, y: 216}
   m_SizeDelta: {x: 0, y: 79.22208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1041470858
@@ -2790,7 +2790,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: 2 Jugadore
+    - m_Text: 1 Jugador
+      m_Image: {fileID: 0}
+    - m_Text: 2 Jugadores
       m_Image: {fileID: 0}
     - m_Text: 3 Jugadores
       m_Image: {fileID: 0}
