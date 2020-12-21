@@ -34,7 +34,8 @@ public class AdminData : MonoBehaviour
 
     public void updateAdmin()
     {
-        var json = "{\"admin_ID\": \"" + admin_id.text + "\", \"email\": \"" + email.text + "\", \"password\": \"" + password.text + "\", \"name\": \"" + nameAdmin.text + "\", \"last_Name\": \"" + last_name.text + "\", \"phone\": \"" + Int32.Parse(nameAdmin.text) + "\"}";
+        var number = Int32.Parse(phone.text);
+        var json = "{\"admin_ID\": \"" + admin_id.text + "\", \"email\": \"" + email.text + "\", \"password\": \"" + password.text + "\", \"name\": \"" + nameAdmin.text + "\", \"last_Name\": \"" + last_name.text + "\", \"phone\": " + number  + "}";
         var httpRequest = WebRequest.CreateHttp("https://localhost:44389/admin/" + admin_id.text);
         httpRequest.Method = "PUT";
         httpRequest.ContentType = "application/json";
@@ -48,7 +49,7 @@ public class AdminData : MonoBehaviour
         PlayerPrefs.SetString("email", email.text);
         PlayerPrefs.SetString("name", nameAdmin.text);
         PlayerPrefs.SetString("last_name", last_name.text);
-        PlayerPrefs.SetInt("phone", Int32.Parse(nameAdmin.text));
+        PlayerPrefs.SetInt("phone", Int32.Parse(phone.text));
         PlayerPrefs.Save();
         confirm.SetActive(true);
         Invoke("RemoveConfirm", 2.0f);
